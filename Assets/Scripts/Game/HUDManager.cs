@@ -394,8 +394,9 @@ public class HUDManager : MonoBehaviour
         mainActionHUD.SetActive(false);
 
         // Start Music
+        AudioManager.Instance.SetParameter("Muffle", 0, 0f);
         AudioManager.Instance.PlayMusic("StageClear_Normal");
-        AudioManager.Instance.SetParameter("ResultShow", 0);
+        AudioManager.Instance.SetParameter("ResultShow", 0, 0);
 
         // Update text values and initialize images
         PauseTimer();
@@ -442,7 +443,7 @@ public class HUDManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         isStageResultsFinished = true;
         legendButtons.SetActive(true);
-        AudioManager.Instance.SetParameter("ResultShow", 1);
+        AudioManager.Instance.SetParameter("ResultShow", 1, 0);
 
         // Convert LevelData to LevelStats and include the timer
         LevelStats statsToSave = new()

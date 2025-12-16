@@ -943,11 +943,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!198 &270061845 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 7988368347292991046, guid: 7a6b44d769ce6f14b9afe8355921b17f, type: 3}
-  m_PrefabInstance: {fileID: 774773270070177680}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &310930620
 GameObject:
   m_ObjectHideFlags: 0
@@ -9148,7 +9143,8 @@ PrefabInstance:
       value: 1.5720003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8308857087822478099, guid: a275d18a2963cb74ca761e5bd0f31f18, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a275d18a2963cb74ca761e5bd0f31f18, type: 3}
@@ -9509,9 +9505,9 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6354604566523051737, guid: 7a6b44d769ce6f14b9afe8355921b17f, type: 3}
-      propertyPath: boostCircle
+      propertyPath: windParticles
       value: 
-      objectReference: {fileID: 270061845}
+      objectReference: {fileID: 774773270070177681}
     - target: {fileID: 8572379202544920726, guid: 7a6b44d769ce6f14b9afe8355921b17f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.06
@@ -9557,6 +9553,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a6b44d769ce6f14b9afe8355921b17f, type: 3}
+--- !u!198 &774773270070177681 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4785332815968816851, guid: 7a6b44d769ce6f14b9afe8355921b17f, type: 3}
+  m_PrefabInstance: {fileID: 774773270070177680}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3838185741337516922
 PrefabInstance:
   m_ObjectHideFlags: 0

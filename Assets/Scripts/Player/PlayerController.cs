@@ -234,7 +234,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Normal Movement
         if (!playerActions.move) return;
 
         float targetSpeed = moveInput.x * moveSpeed;
@@ -257,18 +256,22 @@ public class PlayerController : MonoBehaviour
 
         if (isBoosting)
         {
-            if (Mathf.Abs(playerRB.linearVelocityX) < 1f) isBoosting = false;
+            if (Mathf.Abs(playerRB.linearVelocityX) < 0.5f && boostBegin)
+            {
+                isBoosting = false;
+                return;
+            }
 
             playerRB.linearVelocity = new Vector2((actionMovement.moveSpeed + actionMovement.boostBonus) * directionMultiplier, playerRB.linearVelocityY);
-            Boost();
+            Boost(true);
         }
         else
         {
             playerRB.linearVelocity = new Vector2(newVelocityX, playerRB.linearVelocityY);
-            Boost();
+            Boost(false);
         }
 
-            float absVel = Mathf.Abs(playerRB.linearVelocityX);
+        float absVel = Mathf.Abs(playerRB.linearVelocityX);
         if (absVel >= 8 || controlType == LevelData.ControlType.Runner) animator.SetFloat("Speed", 1);
         else if (absVel >= 5) animator.SetFloat("Speed", 0.5f);
         else if (absVel >= 1) animator.SetFloat("Speed", 0);
@@ -475,7 +478,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void Boost()
+    private void Boost(bool isBoosting)
     {
         if (isBoosting)
         {
@@ -487,6 +490,10 @@ public class PlayerController : MonoBehaviour
                 Sprite.material = outlineShader;
                 windParticles.Play();
                 boostCircle.Play();
+
+                AudioManager.Instance.SetParameter("Muffle", 1, 0.1f);
+                AudioManager.Instance.PlaySFX("player_boost");
+                AudioManager.Instance.PlayBoostLoop();
             }
         }
         else
@@ -498,6 +505,9 @@ public class PlayerController : MonoBehaviour
                 windParticles.Stop();
 
                 boostBegin = false;
+
+                AudioManager.Instance.StopBoostLoop(true);
+                AudioManager.Instance.SetParameter("Muffle", 0, 0.1f);
             }
         }
     }
@@ -579,6 +589,9 @@ public class PlayerController : MonoBehaviour
         playerActions.jump = false;
         playerActions.attack = false;
         playerActions.boost = false;
+
+        // Force stop boost.
+        Boost(false);
     }
 
     public void EnableControls()
@@ -648,8 +661,7 @@ public class PlayerController : MonoBehaviour
         {
             if (controlType == LevelData.ControlType.Hub) return;
 
-            if (Mathf.Abs(playerRB.linearVelocityX) > 1f) isBoosting = true;
-            else isBoosting = false;
+            isBoosting = true;
         };
         controls.Player.Action.canceled += ctx => isBoosting = false;
 

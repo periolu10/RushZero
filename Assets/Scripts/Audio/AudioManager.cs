@@ -1,5 +1,6 @@
 using FMOD.Studio;
 using FMODUnity;
+using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine;
@@ -18,6 +19,8 @@ public class AudioManager : MonoBehaviour
 
     private EventInstance musicInstance;
     private string currentMusicPath = "";
+
+    private EventInstance boostLoop;
 
     private static readonly Dictionary<Scenes.Scene, string> sceneMusicMap = new()
     {
@@ -52,14 +55,30 @@ public class AudioManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        PlaySFX("jingle");
+        if (SceneManager.GetActiveScene().buildIndex == 0) PlaySFX("jingle");
+        else 
+        { 
+            LevelManager levelManager = FindAnyObjectByType<LevelManager>();
+            PlayMusic(levelManager.levelData.sceneToLoad);
+        }
 
-        masterBus = RuntimeManager.GetBus("bus:/");
+            masterBus = RuntimeManager.GetBus("bus:/");
         musicBus = RuntimeManager.GetBus("bus:/Music");
         sfxBus = RuntimeManager.GetBus("bus:/SFX");
     }
 
     #region PUBLIC METHODS
+    public void PlayBoostLoop()
+    {
+        boostLoop = RuntimeManager.CreateInstance("event:/SFX/player_boost_loop");
+        boostLoop.start();
+    }
+
+    public void StopBoostLoop(bool fadeOut)
+    {
+        boostLoop.stop(fadeOut ? FMOD.Studio.STOP_MODE.ALLOWFADEOUT : FMOD.Studio.STOP_MODE.IMMEDIATE);
+    }
+
     private void StartMusic(string eventPath)
     {
         string fullPath = "event:/Music/" + eventPath;
@@ -96,9 +115,30 @@ public class AudioManager : MonoBehaviour
         StartMusic(path);
     }
 
-    public void SetParameter(string parameterName, float value)
+    public void SetParameter(string parameter, float value, float duration)
     {
-        musicInstance.setParameterByName(parameterName, value);
+        StartCoroutine(SmoothParam(parameter, value, duration));
+    }
+
+    IEnumerator SmoothParam(string parameter, float targetValue, float duration)
+    {
+        musicInstance.getParameterByName(parameter, out float startValue);
+
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+
+            float newValue = Mathf.Lerp(startValue, targetValue, t);
+
+            musicInstance.setParameterByName(parameter, newValue);
+
+            yield return null;
+        }
+
+        musicInstance.setParameterByName(parameter, targetValue);
     }
 
     public void StopMusic(bool fadeOut = true)

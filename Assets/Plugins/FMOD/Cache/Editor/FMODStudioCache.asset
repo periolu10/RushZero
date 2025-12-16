@@ -54,7 +54,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-7489022466319506616
+--- !u!114 &-7705850999776640949
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64,23 +64,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Village
+  m_Name: event:/Music/Tutorial
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/Village
+  Path: event:/Music/Tutorial
   Guid:
-    Data1: -1771789245
-    Data2: 1235495762
-    Data3: -437135184
-    Data4: -1825327860
+    Data1: -1127780361
+    Data2: 1089386149
+    Data3: -1126584442
+    Data4: 2007464489
   Banks:
   - {fileID: 8253025617803757913}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: -5326311863572303815}
   MinDistance: 1
   MaxDistance: 20
-  Length: 103620
+  Length: 70428
 --- !u!114 &-7320813266249432751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +136,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-6252946477450674513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/player_boost_loop
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/player_boost_loop
+  Guid:
+    Data1: -911837561
+    Data2: 1271798590
+    Data3: -1842170489
+    Data4: 163585172
+  Banks:
+  - {fileID: 4353038548640909107}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 30982
 --- !u!114 &-5810362407289743300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,7 +217,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-5310884451282443225
+--- !u!114 &-5326311863572303815
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,51 +226,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/ForestAct1
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/ForestAct1
-  Guid:
-    Data1: -649783855
-    Data2: 1277941151
-    Data3: 1936489857
-    Data4: -2032832266
-  Banks:
-  - {fileID: 8253025617803757913}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 141111
---- !u!114 &-5060975674884899557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/ForestAct2
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/ForestAct2
-  Guid:
-    Data1: 708269227
-    Data2: 1322259432
-    Data3: 1479205816
-    Data4: 1433122761
-  Banks:
-  - {fileID: 8253025617803757913}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 182325
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Tutorial/Muffle
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Muffle
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1862327805
+    data2: 502402895
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-4438184973726555231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,7 +256,7 @@ MonoBehaviour:
   Path: Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638941574001583577
+  lastModified: 639015173851218691
   FileSizes: []
   Exists: 1
 --- !u!114 &-4430705862660424743
@@ -369,6 +367,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-3557366597925503469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/MuffleSnapshot
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: snapshot:/MuffleSnapshot
+  Guid:
+    Data1: 121934186
+    Data2: 1205017703
+    Data3: 1261485953
+    Data4: -565360501
+  Banks:
+  - {fileID: -4438184973726555231}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-3289770362660609331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,6 +421,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-3179019191043543278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/PlanetCoreBoss
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/PlanetCoreBoss
+  Guid:
+    Data1: 2038771687
+    Data2: 1326763155
+    Data3: -747917378
+    Data4: -809124529
+  Banks:
+  - {fileID: 8253025617803757913}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 194745
 --- !u!114 &-3041765747860431496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,7 +475,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-3039412055734512952
+--- !u!114 &-2802727103337129864
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -432,21 +484,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/StageClear_Normal/ResultShow
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: ResultShow
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 3245132717
-    data2: 3265711483
-  Type: 1
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Menu
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/Menu
+  Guid:
+    Data1: 475086022
+    Data2: 1311769258
+    Data3: 1797542572
+    Data4: -279041004
+  Banks:
+  - {fileID: 8253025617803757913}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 85075
 --- !u!114 &-2764208740832254079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -633,7 +688,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-2165028971502690
+--- !u!114 &-51619941560524423
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -643,14 +698,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Menu
+  m_Name: event:/Music/Village
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/Menu
+  Path: event:/Music/Village
   Guid:
-    Data1: 475086022
-    Data2: 1311769258
-    Data3: 1797542572
-    Data4: -279041004
+    Data1: -1771789245
+    Data2: 1235495762
+    Data3: -437135184
+    Data4: -1825327860
   Banks:
   - {fileID: 8253025617803757913}
   IsStream: 1
@@ -659,7 +714,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 85075
+  Length: 103620
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -678,15 +733,6 @@ MonoBehaviour:
   - {fileID: 8253025617803757913}
   - {fileID: 4353038548640909107}
   EditorEvents:
-  - {fileID: 645239057924476390}
-  - {fileID: 3475860666787027322}
-  - {fileID: -7489022466319506616}
-  - {fileID: -5060975674884899557}
-  - {fileID: -2165028971502690}
-  - {fileID: -5310884451282443225}
-  - {fileID: 5378832441932820401}
-  - {fileID: 2801705251727877531}
-  - {fileID: 4993211066886209311}
   - {fileID: -3729540206464739372}
   - {fileID: 3573338754323696279}
   - {fileID: -7320813266249432751}
@@ -714,6 +760,17 @@ MonoBehaviour:
   - {fileID: -4430705862660424743}
   - {fileID: -1595424301756585273}
   - {fileID: -9127772319034131490}
+  - {fileID: -6252946477450674513}
+  - {fileID: -3557366597925503469}
+  - {fileID: 41969841289873917}
+  - {fileID: 7703915796699750233}
+  - {fileID: -51619941560524423}
+  - {fileID: 3395515700455691922}
+  - {fileID: -2802727103337129864}
+  - {fileID: 6939479941583993583}
+  - {fileID: -3179019191043543278}
+  - {fileID: 3143501896825715829}
+  - {fileID: -7705850999776640949}
   EditorParameters:
   - {fileID: 8241222635952900188}
   - {fileID: -2413390108487939684}
@@ -723,80 +780,111 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 8051646159620303578}
   cacheVersion: 131857
-  cacheTime: 638941574516572384
+  cacheTime: 639015175992081152
   SerializableEventsDict:
-  - key: event:/Music/LoadScreen
-    index: 0
-  - key: event:/Music/StageClear_Normal
-    index: 1
-  - key: event:/Music/Village
-    index: 2
-  - key: event:/Music/ForestAct2
-    index: 3
-  - key: event:/Music/Menu
-    index: 4
-  - key: event:/Music/ForestAct1
-    index: 5
-  - key: event:/Music/PlanetCoreBoss
-    index: 6
-  - key: event:/Music/ForestBoss
-    index: 7
-  - key: event:/Music/Tutorial
-    index: 8
   - key: event:/SFX/player_boost
-    index: 9
+    index: 0
   - key: event:/SFX/footstep_wood
-    index: 10
+    index: 1
   - key: event:/SFX/qte_charge
-    index: 11
+    index: 2
   - key: event:/SFX/ui_confirm
-    index: 12
+    index: 3
   - key: event:/SFX/ui_cancel
-    index: 13
+    index: 4
   - key: event:/SFX/player_attack
-    index: 14
+    index: 5
   - key: event:/SFX/player_hit
-    index: 15
+    index: 6
   - key: event:/SFX/collect_zerocrystal
-    index: 16
+    index: 7
   - key: event:/SFX/ui_navigate
-    index: 17
+    index: 8
   - key: event:/Voices/Test1
-    index: 18
+    index: 9
   - key: event:/SFX/collect_orb
-    index: 19
+    index: 10
   - key: event:/SFX/ui_menu_select
-    index: 20
+    index: 11
   - key: event:/SFX/enemy_death
-    index: 21
+    index: 12
   - key: event:/SFX/player_slash
-    index: 22
+    index: 13
   - key: event:/SFX/ui_open
-    index: 23
+    index: 14
   - key: event:/SFX/amb_zerocrystal
-    index: 24
+    index: 15
   - key: event:/SFX/player_jump
-    index: 25
+    index: 16
   - key: event:/SFX/ctsn_Intro
-    index: 26
+    index: 17
   - key: event:/SFX/jingle
-    index: 27
+    index: 18
   - key: event:/SFX/qte_hit
-    index: 28
+    index: 19
   - key: event:/SFX/funnyhaha
-    index: 29
+    index: 20
   - key: event:/SFX/warning_attack
-    index: 30
+    index: 21
   - key: event:/SFX/perfect_parry
-    index: 31
+    index: 22
   - key: event:/SFX/qte_burst
-    index: 32
+    index: 23
   - key: event:/SFX/player_dash
-    index: 33
+    index: 24
   - key: event:/Voices/Test2
-    index: 34
+    index: 25
   - key: event:/SFX/success
+    index: 26
+  - key: event:/SFX/player_boost_loop
+    index: 27
+  - key: snapshot:/MuffleSnapshot
+    index: 28
+  - key: event:/Music/LoadScreen
+    index: 29
+  - key: event:/Music/StageClear_Normal
+    index: 30
+  - key: event:/Music/Village
+    index: 31
+  - key: event:/Music/ForestAct2
+    index: 32
+  - key: event:/Music/Menu
+    index: 33
+  - key: event:/Music/ForestAct1
+    index: 34
+  - key: event:/Music/PlanetCoreBoss
     index: 35
+  - key: event:/Music/ForestBoss
+    index: 36
+  - key: event:/Music/Tutorial
+    index: 37
+--- !u!114 &41969841289873917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/LoadScreen
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/LoadScreen
+  Guid:
+    Data1: 144942856
+    Data2: 1167075039
+    Data3: 684916134
+    Data4: 579540829
+  Banks:
+  - {fileID: 8253025617803757913}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 11270
 --- !u!114 &504165413333842546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -824,33 +912,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &645239057924476390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/LoadScreen
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/LoadScreen
-  Guid:
-    Data1: 144942856
-    Data2: 1167075039
-    Data3: 684916134
-    Data4: 579540829
-  Banks:
-  - {fileID: 8253025617803757913}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 11270
 --- !u!114 &662567373558930822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -902,7 +963,31 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 240
---- !u!114 &2801705251727877531
+--- !u!114 &2366407540069835000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ForestAct1/Muffle
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Muffle
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1862327805
+    data2: 502402895
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &3143501896825715829
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -956,7 +1041,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &3475860666787027322
+--- !u!114 &3395515700455691922
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -966,24 +1051,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/StageClear_Normal
+  m_Name: event:/Music/ForestAct2
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/StageClear_Normal
+  Path: event:/Music/ForestAct2
   Guid:
-    Data1: 654619958
-    Data2: 1244965691
-    Data3: 496397487
-    Data4: 1326168283
+    Data1: 708269227
+    Data2: 1322259432
+    Data3: 1479205816
+    Data4: 1433122761
   Banks:
   - {fileID: 8253025617803757913}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
-  Parameters:
-  - {fileID: -3039412055734512952}
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 84816
+  Length: 182325
 --- !u!114 &3573338754323696279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1053,63 +1137,9 @@ MonoBehaviour:
   Path: Audio/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638941574516572384
+  lastModified: 639015161789250271
   FileSizes: []
   Exists: 1
---- !u!114 &4993211066886209311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Tutorial
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/Tutorial
-  Guid:
-    Data1: -1127780361
-    Data2: 1089386149
-    Data3: -1126584442
-    Data4: 2007464489
-  Banks:
-  - {fileID: 8253025617803757913}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 70428
---- !u!114 &5378832441932820401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/PlanetCoreBoss
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/PlanetCoreBoss
-  Guid:
-    Data1: 2038771687
-    Data2: 1326763155
-    Data3: -747917378
-    Data4: -809124529
-  Banks:
-  - {fileID: 8253025617803757913}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 194745
 --- !u!114 &5590603716430289087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1164,6 +1194,86 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &6891530571038727269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/StageClear_Normal/ResultShow
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: ResultShow
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3245132717
+    data2: 3265711483
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &6939479941583993583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/ForestAct1
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/ForestAct1
+  Guid:
+    Data1: -649783855
+    Data2: 1277941151
+    Data3: 1936489857
+    Data4: -2032832266
+  Banks:
+  - {fileID: 8253025617803757913}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 2366407540069835000}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 141111
+--- !u!114 &7703915796699750233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/StageClear_Normal
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/StageClear_Normal
+  Guid:
+    Data1: 654619958
+    Data2: 1244965691
+    Data3: 496397487
+    Data4: 1326168283
+  Banks:
+  - {fileID: 8253025617803757913}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 6891530571038727269}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 84816
 --- !u!114 &7982934915618987457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1206,10 +1316,10 @@ MonoBehaviour:
   Path: Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638941574001588594
+  lastModified: 639015173851229284
   FileSizes:
   - Name: 
-    Value: 2682
+    Value: 2832
   Exists: 1
 --- !u!114 &8241222635952900188
 MonoBehaviour:
@@ -1250,7 +1360,7 @@ MonoBehaviour:
   Path: Audio/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638941563355286393
+  lastModified: 639015175992081152
   FileSizes: []
   Exists: 1
 --- !u!114 &9118971572659118862
