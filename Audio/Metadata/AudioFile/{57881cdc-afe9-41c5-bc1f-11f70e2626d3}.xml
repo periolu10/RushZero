@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{57881cdc-afe9-41c5-bc1f-11f70e2626d3}">
+		<property name="assetPath">
+			<value>zero ambience.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>6.723208333333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{dcdbfc81-0648-4849-b763-6ac9c72a1e3b}</destination>
+		</relationship>
+	</object>
+</objects>

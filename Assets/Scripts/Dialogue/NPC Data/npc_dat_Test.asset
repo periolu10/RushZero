@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e54051c7c7cc244394b029872b7e098, type: 3}
+  m_Name: npc_dat_Test
+  m_EditorClassIdentifier: Assembly-CSharp::NPCData
+  npcName: Testie
+  npcIcon: {fileID: 810205320377209642, guid: cbb6cb31774a8e6408f88d740918933c, type: 3}
+  nameColor: {r: 0, g: 0.1721749, b: 0.23584908, a: 1}
+  dialogueColor: {r: 0, g: 0.25755793, b: 0.2924528, a: 1}
+  characterVoiceEvent:
+    Guid:
+      Data1: -1478219159
+      Data2: 1106937883
+      Data3: 407374771
+      Data4: 1051240933
+    Path: event:/Voices/Test1

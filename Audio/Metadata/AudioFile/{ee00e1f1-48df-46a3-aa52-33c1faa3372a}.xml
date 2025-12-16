@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{ee00e1f1-48df-46a3-aa52-33c1faa3372a}">
+		<property name="assetPath">
+			<value>QuakeRoar.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>10.825895833333334</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{dcdbfc81-0648-4849-b763-6ac9c72a1e3b}</destination>
+		</relationship>
+	</object>
+</objects>
