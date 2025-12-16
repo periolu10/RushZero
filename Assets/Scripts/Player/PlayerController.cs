@@ -81,6 +81,8 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem windParticles;
     public Material litShader;
     public Material outlineShader;
+    public ParticleSystem boostCircle;
+    bool boostBegin = false;
 
     //-- Input Actions --//
     InputActions controls;
@@ -101,6 +103,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D PlayerRB => playerRB;
     public Vector2 MoveInput => moveInput;
     public bool IsPushing => isPushing;
+    public bool IsBoosting => isBoosting;
     public Animator Animator => animator;
     public bool IsGrounded => isGrounded;
     public bool IsHurt => isHurt;
@@ -134,6 +137,7 @@ public class PlayerController : MonoBehaviour
         states = new List<PlayerState>()
         {
             //new AttackState(this),
+            //new BoostState(this),
             new HurtState(this),
             new PushState(this),
             new JumpState(this),
@@ -249,14 +253,35 @@ public class PlayerController : MonoBehaviour
         if (controlType != LevelData.ControlType.Runner && Mathf.Abs(newVelocityX) < 1f)
             newVelocityX = 0f;
 
-        playerRB.linearVelocity = new Vector2(newVelocityX, playerRB.linearVelocityY);
+        float directionMultiplier = sprite.flipX ? -1 : 1;
 
-        float absVel = Mathf.Abs(playerRB.linearVelocityX);
+        if (isBoosting)
+        {
+            if (Mathf.Abs(playerRB.linearVelocityX) < 1f) isBoosting = false;
+
+            playerRB.linearVelocity = new Vector2((actionMovement.moveSpeed + actionMovement.boostBonus) * directionMultiplier, playerRB.linearVelocityY);
+            Boost();
+        }
+        else
+        {
+            playerRB.linearVelocity = new Vector2(newVelocityX, playerRB.linearVelocityY);
+            Boost();
+        }
+
+            float absVel = Mathf.Abs(playerRB.linearVelocityX);
         if (absVel >= 8 || controlType == LevelData.ControlType.Runner) animator.SetFloat("Speed", 1);
         else if (absVel >= 5) animator.SetFloat("Speed", 0.5f);
         else if (absVel >= 1) animator.SetFloat("Speed", 0);
         else animator.SetFloat("Speed", 0);
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 7)
+        {
+            collision.gameObject.GetComponent<EnemyController>().TakeDamage(200);
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -450,6 +475,33 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void Boost()
+    {
+        if (isBoosting)
+        {
+            if (!boostBegin)
+            {
+                boostImpulse.GenerateImpulse();
+                boostBegin = true;
+                trail.emitting = true;
+                Sprite.material = outlineShader;
+                windParticles.Play();
+                boostCircle.Play();
+            }
+        }
+        else
+        {
+            if (boostBegin)
+            {
+                trail.emitting = false;
+                Sprite.material = litShader;
+                windParticles.Stop();
+
+                boostBegin = false;
+            }
+        }
+    }
+
     public void Death()
     {
         if (GameManager.Instance.gameData.playerLives > 0)
@@ -591,6 +643,15 @@ public class PlayerController : MonoBehaviour
             if (playerRB.linearVelocityY > 0)
                 playerRB.linearVelocity = new Vector2(playerRB.linearVelocityX, playerRB.linearVelocityY * jumpSettings.jumpCutMultiplier);
         };
+
+        controls.Player.Action.performed += ctx =>
+        {
+            if (controlType == LevelData.ControlType.Hub) return;
+
+            if (Mathf.Abs(playerRB.linearVelocityX) > 1f) isBoosting = true;
+            else isBoosting = false;
+        };
+        controls.Player.Action.canceled += ctx => isBoosting = false;
 
         controls.Player.Up.performed += ctx => upPressed = true;
         controls.Player.Up.canceled += ctx => upPressed = false;

@@ -26,6 +26,7 @@ public class LevelManager : MonoBehaviour
         {
             GameManager.Instance.gameData.savedHub = levelData;
             GameManager.Instance.SaveGame();
+            Debug.Log("Saved: " + GameManager.Instance.gameData.savedHub);
         }
 
         if (levelData.stageType == LevelData.StageType.Cutscene)

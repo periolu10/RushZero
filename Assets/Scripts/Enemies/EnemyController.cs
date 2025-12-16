@@ -284,6 +284,8 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            if (collision.gameObject.GetComponent<PlayerController>().IsBoosting) return;
+
             collision.gameObject.GetComponent<PlayerController>().TakeDamage(enemyData.enemyDamage, transform);
         }
     }

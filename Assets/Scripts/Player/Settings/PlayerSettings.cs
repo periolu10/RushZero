@@ -15,6 +15,7 @@ public class PlayerSettings
         public float moveSpeed = 5f;
         public float acceleration = 10f;
         public float deceleration = 15f;
+        public float boostBonus = 20;
     }
 
     [System.Serializable]
