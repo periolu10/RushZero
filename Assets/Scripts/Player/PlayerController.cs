@@ -56,12 +56,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float groundCheckRadius = 0.2f;
     [SerializeField] LayerMask groundLayer;
 
-
-    private float boostBufferCounter = 0f;
-    private float boostTimer = 0;
     private bool isBoosting = false;
-    private bool boostOnCooldown = false;
-
+    private float boostValue = 0;
+    [SerializeField] float boostMaxValue = 100;
+    [SerializeField] float boostDecreaseValue = 1;
 
     [SerializeField] LayerMask enemyLayerMask;
 
@@ -104,6 +102,8 @@ public class PlayerController : MonoBehaviour
     public Vector2 MoveInput => moveInput;
     public bool IsPushing => isPushing;
     public bool IsBoosting => isBoosting;
+    public float BoostValue => boostValue;
+    public float BoostMaxValue => boostMaxValue;
     public Animator Animator => animator;
     public bool IsGrounded => isGrounded;
     public bool IsHurt => isHurt;
@@ -170,8 +170,22 @@ public class PlayerController : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckRadius, groundLayer);
         HandleJump();
-
         SpriteFlip();
+
+        // Boost Meter
+        if (isBoosting)
+        {
+            if (boostValue > 0)
+            {
+                boostValue -= Time.deltaTime * boostDecreaseValue;
+            }
+            else
+            {
+                isBoosting = false;
+            }
+
+            hudManager.UpdateBoost(boostValue, boostMaxValue);
+        }
 
         #region Trigger/Collision Events
         // UpPress
@@ -281,7 +295,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 7)
+        if (collision.gameObject.layer == 7 && isBoosting)
         {
             collision.gameObject.GetComponent<EnemyController>().TakeDamage(200);
         }
@@ -509,6 +523,18 @@ public class PlayerController : MonoBehaviour
                 AudioManager.Instance.StopBoostLoop(true);
                 AudioManager.Instance.SetParameter("Muffle", 0, 0.1f);
             }
+        }
+    }
+
+    public void AddBoostValue(float value)
+    {
+        if (boostValue + value <= boostMaxValue)
+        {
+            boostValue += value;
+        }
+        else if (boostValue + value > boostMaxValue)
+        {
+            boostValue = boostMaxValue;
         }
     }
 

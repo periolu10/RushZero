@@ -1,3 +1,4 @@
+using Ink.Runtime;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -41,7 +42,7 @@ public class RushOrb : MonoBehaviour
             }
             else
             {
-                return; // still not ready
+                return;
             }
         }
 
@@ -71,16 +72,18 @@ public class RushOrb : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             CollectOrb();
+
+            HUDManager hudManager = FindAnyObjectByType<HUDManager>();
+            hudManager.AddScore(50);
+
+            collision.gameObject.GetComponent<PlayerController>().AddBoostValue(10);
+            hudManager.UpdateBoost(collision.gameObject.GetComponent<PlayerController>().BoostValue, collision.gameObject.GetComponent<PlayerController>().BoostMaxValue);
         }
     }
 
     public void CollectOrb()
     {
         AudioManager.Instance.PlaySFX("collect_orb");
-
-        HUDManager hudManager = FindAnyObjectByType<HUDManager>();
-        hudManager.AddScore(50);
-
         Destroy(gameObject);
     }
 

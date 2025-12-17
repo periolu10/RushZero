@@ -19,11 +19,6 @@
 		<relationship name="snapshotMasterTrack">
 			<destination>{e8fa735f-ab8c-4c92-b2ca-122d82eda570}</destination>
 		</relationship>
-		<relationship name="snapshotProperties">
-			<destination>{37015d16-d315-4a2e-8a7e-50d38815e3e0}</destination>
-			<destination>{880ef003-b392-4414-9dba-e19c37d06293}</destination>
-			<destination>{a5d26667-41a9-4838-b113-9c5588760f82}</destination>
-		</relationship>
 		<relationship name="snapshotTracks">
 			<destination>{5e70c46a-66e4-42d6-a5bc-b2f0c17a6fdb}</destination>
 		</relationship>
@@ -32,39 +27,6 @@
 	<object class="MarkerTrack" id="{738d4726-6616-4af9-b5d9-b4c9cbaf5a76}" />
 	<object class="Timeline" id="{d4dc400c-334f-4026-869a-5a701a6f628a}" />
 	<object class="SnapshotMasterTrack" id="{e8fa735f-ab8c-4c92-b2ca-122d82eda570}" />
-	<object class="SnapshotProperty" id="{37015d16-d315-4a2e-8a7e-50d38815e3e0}">
-		<property name="propertyName">
-			<value>mix</value>
-		</property>
-		<property name="value">
-			<value>50</value>
-		</property>
-		<relationship name="automatableObject">
-			<destination>{f86f1795-7137-40ea-8290-f41598614604}</destination>
-		</relationship>
-	</object>
-	<object class="SnapshotProperty" id="{880ef003-b392-4414-9dba-e19c37d06293}">
-		<property name="propertyName">
-			<value>cutoff</value>
-		</property>
-		<property name="value">
-			<value>17000</value>
-		</property>
-		<relationship name="automatableObject">
-			<destination>{3f788369-9c53-453f-a6f5-96838b680de8}</destination>
-		</relationship>
-	</object>
-	<object class="SnapshotProperty" id="{a5d26667-41a9-4838-b113-9c5588760f82}">
-		<property name="propertyName">
-			<value>resonance</value>
-		</property>
-		<property name="value">
-			<value>4.1500001</value>
-		</property>
-		<relationship name="automatableObject">
-			<destination>{3f788369-9c53-453f-a6f5-96838b680de8}</destination>
-		</relationship>
-	</object>
 	<object class="SnapshotTrack" id="{5e70c46a-66e4-42d6-a5bc-b2f0c17a6fdb}">
 		<relationship name="mixerStrip">
 			<destination>{4f505df1-3703-4d31-9425-860293d71855}</destination>

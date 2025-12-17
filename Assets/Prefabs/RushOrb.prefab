@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d81fd411336bc5343853a40bf2379905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RushOrb
-  attractRadius: 2
-  attractSpeed: 50
+  attractRadius: 5
+  attractSpeed: 60
   collectDistance: 0.5
 --- !u!58 &2963990085228570346
 CircleCollider2D:
@@ -121,6 +121,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5499077027122951685
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -166,6 +167,7 @@ SpriteRenderer:
   m_SortingLayerID: 1740146659
   m_SortingLayer: 4
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: -8875133585501962890, guid: 69a0da96e0ee2174f816ee3364ff2b7e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -175,7 +177,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &2425830205790902648
 Animator:

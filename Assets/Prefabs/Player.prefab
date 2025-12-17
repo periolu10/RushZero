@@ -10082,6 +10082,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  boostMaxValue: 100
+  boostDecreaseValue: 10
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 128

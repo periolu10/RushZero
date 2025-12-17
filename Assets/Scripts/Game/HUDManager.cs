@@ -35,6 +35,9 @@ public class HUDManager : MonoBehaviour
     float targetFillAmountBoss;
     [SerializeField] GameObject collectableNotif;
 
+    [SerializeField] Image boostBar;
+    float targetBoostAmount;
+
     [Header("Hub Only Elements")]
     [SerializeField] GameObject location;
     [SerializeField] TMP_Text title;
@@ -106,6 +109,7 @@ public class HUDManager : MonoBehaviour
         canvas = GetComponent<Canvas>();
 
         UpdateHealthBar();
+        UpdateBoostBar();
 
         SetupHUD();
         SetupText();
@@ -126,6 +130,7 @@ public class HUDManager : MonoBehaviour
     {
         UpdateTimerDisplay();
         UpdateHealthBar();
+        UpdateBoostBar();
         UpdateScore();
     }
 
@@ -219,6 +224,16 @@ public class HUDManager : MonoBehaviour
     void UpdateHealthBar()
     {
         playerHealthBar.fillAmount = Mathf.Lerp(playerHealthBar.fillAmount, targetFillAmountPlayer, Time.deltaTime * 5);
+    }
+
+    public void UpdateBoost(float currentBoost, float maxBoost)
+    {
+        targetBoostAmount = currentBoost / maxBoost;
+    }
+
+    void UpdateBoostBar()
+    {
+        boostBar.fillAmount = Mathf.Lerp(boostBar.fillAmount, targetBoostAmount, Time.deltaTime * 10);
     }
 
     void UpdateScore()

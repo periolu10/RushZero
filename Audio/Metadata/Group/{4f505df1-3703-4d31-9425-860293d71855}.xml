@@ -31,8 +31,6 @@
 	<object class="MixerBusEffectChain" id="{04b564d6-a0b7-42c3-91a6-3e8419c371de}">
 		<relationship name="effects">
 			<destination>{53b4c86e-37b0-4ffe-bdc4-4d062f0df9f1}</destination>
-			<destination>{f86f1795-7137-40ea-8290-f41598614604}</destination>
-			<destination>{3f788369-9c53-453f-a6f5-96838b680de8}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{cb614ca5-894a-4ae4-b4f6-c62698f90de8}" />
@@ -46,28 +44,12 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{53b4c86e-37b0-4ffe-bdc4-4d062f0df9f1}" />
-	<object class="FlangerEffect" id="{f86f1795-7137-40ea-8290-f41598614604}">
-		<property name="rate">
-			<value>0.839999974</value>
-		</property>
-		<property name="delay">
-			<value>0.25</value>
-		</property>
-		<property name="mix">
-			<value>0</value>
-		</property>
-	</object>
-	<object class="LowpassEffect" id="{3f788369-9c53-453f-a6f5-96838b680de8}">
-		<property name="cutoff">
-			<value>22000</value>
-		</property>
-	</object>
 	<object class="AutomationPoint" id="{8d6ee0a8-ed19-45a0-98c9-6cff6771d54d}">
 		<property name="position">
 			<value>1</value>
 		</property>
 		<property name="value">
-			<value>-15</value>
+			<value>-10</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{e8dabe4e-5447-4153-9aeb-55011c73ddc6}">
@@ -75,7 +57,7 @@
 			<value>0</value>
 		</property>
 		<property name="value">
-			<value>-58.3333321</value>
+			<value>-43.75</value>
 		</property>
 		<property name="curveShape">
 			<value>-0.0410998575</value>
