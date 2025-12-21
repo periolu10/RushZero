@@ -10007,6 +10007,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8572379202544920726}
   - component: {fileID: 6354604566523051737}
+  - component: {fileID: 1422670601797191021}
   - component: {fileID: 3187883704845535263}
   - component: {fileID: 4342299955907136298}
   - component: {fileID: 419152659846584500}
@@ -10088,6 +10089,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   boostImpulse: {fileID: 419152659846584500}
+  shockwaveControl: {fileID: 1422670601797191021}
   trail: {fileID: 1119059488958329431}
   chargeParticles: {fileID: 2158493365583109530}
   windParticles: {fileID: 4785332815968816851}
@@ -10098,6 +10100,20 @@ MonoBehaviour:
   cancelPressed: 0
   stateText: {fileID: 0}
   inJump: 0
+--- !u!114 &1422670601797191021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4834756777735647143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2090d59abc2cc444b1a8df98f188f40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShockwaveControl
+  ringPrefab: {fileID: 3610199732070670151, guid: acbd22b8e9c82cd418cd73866f951e81, type: 3}
+  lifetime: 0.5
 --- !u!50 &3187883704845535263
 Rigidbody2D:
   serializedVersion: 5

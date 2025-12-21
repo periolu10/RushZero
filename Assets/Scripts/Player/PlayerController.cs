@@ -72,6 +72,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private HUDManager hudManager;
     public CinemachineImpulseSource boostImpulse;
+    [SerializeField] private ShockwaveControl shockwaveControl;
 
     [Header("Effects")]
     public TrailRenderer trail;
@@ -503,7 +504,7 @@ public class PlayerController : MonoBehaviour
                 trail.emitting = true;
                 Sprite.material = outlineShader;
                 windParticles.Play();
-                boostCircle.Play();
+                shockwaveControl.CallShockwave(this.transform);
 
                 AudioManager.Instance.SetParameter("Muffle", 1, 0.1f);
                 AudioManager.Instance.PlaySFX("player_boost");
